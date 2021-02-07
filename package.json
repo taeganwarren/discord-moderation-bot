@@ -4,8 +4,8 @@
   "description": "A robust moderation and server management discord bot",
   "main": "dist/bot.js",
   "scripts": {
-    "start": "node dist/bot.js",
-    "dev": "nodemon src/bot.ts",
+    "start": "node dist/main.js",
+    "dev": "nodemon src/main.ts",
     "build": "tsc"
   },
   "author": "",

@@ -1,0 +1,6 @@
+import { Bot } from './bot';
+
+const bot = new Bot();
+bot.start();
+
+export default bot;

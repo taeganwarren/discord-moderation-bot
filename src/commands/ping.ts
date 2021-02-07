@@ -1,15 +1,10 @@
-// Imports
-import { Message } from 'discord.js';
+import { Execute } from '../interfaces/Command';
 
-export default {
+const name: string = 'ping';
+const description: string = 'Pong!';
 
-    // Meta information
-    name: 'ping',
-    description: 'Pong!',
-
-    // Command function
-    async execute(message: Message, args: string[]) {
-        message.channel.send('Pong!');
-    }
-
+const execute: Execute = async (bot, message, args) => {
+    message.channel.send('Pong!');
 }
+
+export { name, description, execute }
