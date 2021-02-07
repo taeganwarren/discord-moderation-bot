@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 import { Client, Collection } from 'discord.js';
 import { readdirSync } from 'fs';
 import { Command } from './interfaces/Command';
@@ -13,8 +11,10 @@ class Bot extends Client {
         super({
             disableMentions: 'everyone'
         });
+        this.setup();
+        this.start();
     }
-    public async start() {
+    private setup() {
         const command_files = readdirSync('./src/commands').filter(file => file.endsWith(dev ? '.ts' : '.js'));
         for (const file of command_files) {
             const command: Command = require(`./commands/${file}`);
@@ -22,6 +22,8 @@ class Bot extends Client {
         }
         this.on('ready', () => { console.log(`${this.user?.username} has logged in`); });
         this.on('message', message_handler);
+    }
+    private start() {
         this.login(process.env.TOKEN);
     }
 }
