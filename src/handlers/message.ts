@@ -6,7 +6,7 @@ import bot from '../main';
 // Message event handler
 export default async (message: Message) => {
 
-    // Return in the author was the bot
+    // Return if the author was the bot
     if (message.author.bot) { return; }
 
     // Get the guild id the message was sent it
