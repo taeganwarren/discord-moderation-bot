@@ -7,7 +7,8 @@ const description: string = 'Pong!';
 
 // Command execute function
 const execute: Execute = async (bot, message, args) => {
-    message.channel.send('Pong!');
+    const msg = await message.channel.send("🏓 Pinging...");
+    msg.edit(`🏓 Pong!\nLatency: ${Math.floor(msg.createdAt.getTime() - message.createdAt.getTime())}ms`);
 }
 
 export { name, description, execute }

@@ -7,6 +7,7 @@ import { Command } from './interfaces/Command';
 import message_handler from './handlers/message';
 import ready_handler from './handlers/ready';
 
+// TODO: Handle switching from dev to production environments with env variables
 const dev = process.env.NODE_ENV === 'development';
 
 // Bot class
@@ -25,7 +26,7 @@ class Bot extends Client {
             disableMentions: 'everyone'
         });
         this.load_commands();
-        this.register_handler();
+        this.register_handlers();
         this.start();
     }
 
@@ -39,7 +40,7 @@ class Bot extends Client {
     }
 
     // Registers event handlers
-    private register_handler() {
+    private register_handlers() {
         this.on('message', message_handler);
         this.on('ready', ready_handler);
     }
