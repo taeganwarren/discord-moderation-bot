@@ -1,0 +1,13 @@
+{
+    "name": "Chopstick",
+    "description": "A robust moderation and server management discord bot",
+    "version": "0.0.1",
+    "id": "548235198727323658",
+    "developers": [
+        "air conditioner#3950"
+    ],
+    "website": "",
+    "support_link": "",
+    "color": [56, 112, 184],
+    "prefix": "!"
+}
