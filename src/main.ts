@@ -1,5 +1,5 @@
 require('dotenv').config();
 
-import { Bot } from './bot';
+import { Bot } from './classes/bot';
 
 const bot = new Bot();

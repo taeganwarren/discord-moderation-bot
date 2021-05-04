@@ -1,7 +1,7 @@
 // Library imports
 import { Message } from 'discord.js';
 // Projects imports
-import { Bot } from '../bot';
+import { Bot } from '../classes/bot';
 
 // Execute functions interface
 export interface Execute {
