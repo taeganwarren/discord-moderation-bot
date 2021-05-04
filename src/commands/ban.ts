@@ -1,31 +1,28 @@
 // Projects imports
 import { Execute } from '../interfaces/Command';
+import { get_member } from '../lib/functions';
 
 // Command properties
-const name: string = 'prefix';
-const description: string = 'Sets a custom prefix for the bot in the current server.';
+const name: string = 'Ban';
+const description: string = 'Ban a user from the server';
 
 // Command execute function
 // TODO: Delete original message and bot message if insufficient permission after x seconds
 const execute: Execute = async (bot, message, args) => {
-
+    
     // Check if command author has permissions
-    if (!message.member?.hasPermission(['MANAGE_GUILD'])) {
+    if (!message.member?.hasPermission(['BAN_MEMBERS'])) {
         message.reply('You do not have permissions for this command.');
         return;
     }
 
-    // Check usage and set the prefix in the redis store
-    if (args[0]) {
-        if (message.guild) {
-            bot.prefixes.set(message.guild.id, args[0], async (err, res) => {
-
-            });
-        }
-    } else {
-        message.reply('Usage: !prefix <prefix>');
+    // Get the user the author wants to ban
+    const banned_user = get_member(message, args.shift(), false);
+    if (!banned_user) {
+        message.reply('I am unable to find that member.');
         return;
     }
+
 }
 
 export { name, description, execute }

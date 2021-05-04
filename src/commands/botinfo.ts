@@ -12,6 +12,7 @@ const description: string = 'Information about the bot.';
 
 // Command execute function
 // TODO: Better logic for date and other possibly null/undefined variables
+// TODO: Fix hardcoded color value
 const execute: Execute = async (bot, message, args) => {
 
     // Return if the guild is not available
@@ -43,6 +44,8 @@ const execute: Execute = async (bot, message, args) => {
 
     // Create bot embed
     const bot_info_embed = new MessageEmbed()
+        .setThumbnail(member.user.displayAvatarURL())
+        .setColor([56, 112, 184])
         .addField('User information:', stripIndents`
         **\\> Username:** ${member?.user.username}
         **\\> Tag:** ${member?.user.tag}

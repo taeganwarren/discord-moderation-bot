@@ -3,3 +3,4 @@ dist/
 .env
 redis.conf
 TODO
+command_starter

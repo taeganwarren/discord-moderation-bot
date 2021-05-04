@@ -1,52 +1,41 @@
 // Library imports
 import { Client, Collection } from 'discord.js';
 import { readdirSync } from 'fs';
-import redis, { RedisClient } from 'redis';
 // Project imports
 import { Command } from './interfaces/Command';
-import message_handler from './handlers/message';
-import ready_handler from './handlers/ready';
-
-// TODO: Handle switching from dev to production environments with env variables
-const dev = process.env.NODE_ENV === 'development';
+import { Event } from './interfaces/Event';
+import { redis_client } from './lib/redis';
 
 // Bot class
 class Bot extends Client {
 
     // Properties
     public commands: Collection<string, Command> = new Collection();
-    public prefixes: RedisClient = redis.createClient({
-        host: 'localhost',
-        port: 5000
-    });
+    public prefixes = redis_client;
 
     // Bot constructor
     public constructor() {
         super({
             disableMentions: 'everyone'
         });
-        this.load_commands();
-        this.register_handlers();
-        this.start();
-    }
-
-    // Dynamically get all commands and load them into the commands collection
-    private load_commands() {
-        const command_files = readdirSync('./src/commands').filter(file => file.endsWith(dev ? '.ts' : '.js'));
+        // Get all commands and load them into the commands collection
+        const command_files = readdirSync('./src/commands').filter(file => file.endsWith('.ts'));
         for (const file of command_files) {
             const command: Command = require(`./commands/${file}`);
             this.commands.set(command.name, command);
         }
-    }
+        // Registers event handlers
+        const event_files = readdirSync('./src/events').filter(file => file.endsWith('.ts'));
+        for (const file of event_files) {
+            const event: Event = require(`./events/${file}`);
+            if (event.once) {
+                this.once(event.name, (...args) => event.execute(this, ...args));
+            } else {
+                this.on(event.name, (...args) => event.execute(this, ...args));
+            }
+        }
 
-    // Registers event handlers
-    private register_handlers() {
-        this.on('message', message_handler);
-        this.on('ready', ready_handler);
-    }
-
-    // Starts the bot
-    private start() {
+        // Starts the bot
         this.login(process.env.TOKEN);
     }
 
