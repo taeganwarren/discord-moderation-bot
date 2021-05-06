@@ -4,16 +4,17 @@ import { stripIndents } from 'common-tags';
 // Project imports
 import { Execute } from '../interfaces/Command';
 import { get_member, format_date } from '../lib/functions';
-import config from '../config.json';
+import config from '../botconfig.json';
 
 // Properties
 const name: string = 'botinfo';
 const description: string = 'Information about the bot.';
+const usage: string = '';
 
 // Execute function
 // TODO: Better logic for date and other possibly null/undefined variables
 // TODO: Fix hardcoded color value
-const execute: Execute = async (bot, message, args) => {
+const execute: Execute = async (prefix, bot, message, args) => {
     // Return if the guild is not available
     if (!message.guild?.available) { return; }
     // Get the information related to the bot in the specific server
@@ -58,4 +59,4 @@ const execute: Execute = async (bot, message, args) => {
     message.channel.send(bot_info_embed);
 }
 
-export { name, description, execute }
+export { name, description, usage, execute }

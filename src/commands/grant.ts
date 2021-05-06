@@ -4,9 +4,10 @@ import { Execute } from '../interfaces/Command';
 // Properties
 const name: string = 'grant';
 const description: string = 'Grant a user access to a specific channel';
+const usage: string = '';
 
 // Execute function
-const execute: Execute = async (bot, message, args) => {
+const execute: Execute = async (prefix, bot, message, args) => {
     
     // Flow
     // ----------------
@@ -26,4 +27,4 @@ const execute: Execute = async (bot, message, args) => {
     }
 }
 
-export { name, description, execute }
+export { name, description, usage, execute }

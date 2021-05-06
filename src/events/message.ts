@@ -1,13 +1,15 @@
+// Library imports
+import { Message } from 'discord.js';
 // Project imports
-import { Execute } from '../interfaces/Command';
-import config from '../config.json';
+import { Execute } from '../interfaces/Event';
+import config from '../botconfig.json';
 
 // Properties
 const name: string = 'message';
 const once: boolean = false;
 
 // Execute function
-const execute: Execute = async (bot, message) => {
+const execute: Execute = async (bot, message: Message) => {
     // Return if the author was the bot
     if (message.author.bot) { return; }
     // Get the guild id the message was sent it
@@ -23,7 +25,7 @@ const execute: Execute = async (bot, message) => {
         const command = args.shift()?.toLowerCase();
         // Execute the command
         if (command) {
-            await bot.commands.get(command)?.execute(bot, message, args);
+            await bot.commands.get(command)?.execute(prefix, bot, message, args);
         }
     });
 }

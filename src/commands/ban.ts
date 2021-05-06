@@ -5,11 +5,12 @@ import { get_member } from '../lib/functions';
 // Properties
 const name: string = 'Ban';
 const description: string = 'Ban a user from the server';
+const usage: string = '';
 
 // Execute function
 // TODO: Delete original message and bot message if insufficient permission after x seconds
 // TODO: Finish command
-const execute: Execute = async (bot, message, args) => {
+const execute: Execute = async (prefix, bot, message, args) => {
     // Check if command author has permissions
     if (!message.member?.hasPermission(['BAN_MEMBERS'])) {
         message.reply('You do not have permissions for this command.');
@@ -23,4 +24,4 @@ const execute: Execute = async (bot, message, args) => {
     }
 }
 
-export { name, description, execute }
+export { name, description, usage, execute }

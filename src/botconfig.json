@@ -1,7 +1,7 @@
 {
-    "name": "discord-moderation-bot",
+    "name": "devbot",
     "version": "0.1.0",
-    "description": "A robust moderation and server management discord bot",
+    "description": "devbot is a robust moderation and server management bot.",
     "id": "548235198727323658",
     "developers": [
         "air conditioner#3950"

@@ -1,5 +1,5 @@
 // Project imports
-import { Execute } from '../interfaces/Command';
+import { Execute } from '../interfaces/Event';
 
 // Properties
 const name: string = 'ready';
