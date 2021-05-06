@@ -15,15 +15,19 @@ const usage: string = '';
 // TODO: Better logic for date and other possibly null/undefined variables
 // TODO: Fix hardcoded color value
 const execute: Execute = async (prefix, bot, message, args) => {
+
     // Return if the guild is not available
     if (!message.guild?.available) { return; }
+
     // Get the information related to the bot in the specific server
     const member = get_member(message, config.id, false);
     if (!member) { return; }
+
     // Get the roles assigned to the bot
     const roles = member.roles.cache
         .filter(r => r.id !== message.guild?.id)
         .map(r => r).join(", ") || 'none';
+
     // Format developers string
     let developers = '';
     config.developers.forEach((element: string) => {
@@ -33,10 +37,12 @@ const execute: Execute = async (prefix, bot, message, args) => {
             developers += element
         }
     });
+
     // Get date information
     if (!member.joinedAt) { return; }
     const joined = format_date(member.joinedAt);
     const created = format_date(member.user.createdAt);
+
     // Create bot embed
     const bot_info_embed = new MessageEmbed()
         .setThumbnail(member.user.displayAvatarURL())
@@ -55,6 +61,7 @@ const execute: Execute = async (prefix, bot, message, args) => {
         **\\> Description:** ${config.description}
         **\\> Version:** ${config.version}
         **\\> Developers:** ${developers}`);
+        
     // Send embed
     message.channel.send(bot_info_embed);
 }

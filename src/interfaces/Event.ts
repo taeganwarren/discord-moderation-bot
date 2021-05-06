@@ -1,7 +1,7 @@
 // Project imports
 import { Bot } from '../classes/bot';
 
-// Execute functions interface
+// Execute function interface
 export interface Execute {
     (bot: Bot, ...args: any): Promise<void>
 }

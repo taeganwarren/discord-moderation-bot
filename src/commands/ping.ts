@@ -13,7 +13,6 @@ const execute: Execute = async (prefix, bot, message, args) => {
         message.delete({ timeout: 5000 });
         res.delete({ timeout: 5000 });
     });
-    return;
 }
 
 export { name, description, usage, execute }

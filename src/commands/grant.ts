@@ -18,6 +18,7 @@ const execute: Execute = async (prefix, bot, message, args) => {
     // Assign role to user
     // Grant role access to channel
 
+    // Check if command author has permissions
     if (!message.member?.hasPermission(['MANAGE_ROLES'])) {
         message.reply('You do not have permissions for this command').then(res => {
             message.delete({timeout:5000});

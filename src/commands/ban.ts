@@ -1,4 +1,4 @@
-//  imports
+// Project imports
 import { Execute } from '../interfaces/Command';
 import { get_member } from '../lib/functions';
 
@@ -11,11 +11,13 @@ const usage: string = '';
 // TODO: Delete original message and bot message if insufficient permission after x seconds
 // TODO: Finish command
 const execute: Execute = async (prefix, bot, message, args) => {
+
     // Check if command author has permissions
     if (!message.member?.hasPermission(['BAN_MEMBERS'])) {
         message.reply('You do not have permissions for this command.');
         return;
     }
+    
     // Get the user the author wants to ban
     const banned_user = get_member(message, args.shift(), false);
     if (!banned_user) {
