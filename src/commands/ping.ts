@@ -8,6 +8,8 @@ const usage: string = '';
 
 // Execute function
 const execute: Execute = async (prefix, bot, message, args) => {
+
+    // Ping!
     message.channel.send(":ping_pong: Pinging...").then(res => {
         res.edit(`:ping_pong: Pong!\nLatency: ${res.createdTimestamp - message.createdTimestamp}ms`);
         message.delete({ timeout: 5000 });

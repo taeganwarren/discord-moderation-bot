@@ -8,13 +8,15 @@ const description: string = 'Ban a user from the server';
 const usage: string = '';
 
 // Execute function
-// TODO: Delete original message and bot message if insufficient permission after x seconds
 // TODO: Finish command
 const execute: Execute = async (prefix, bot, message, args) => {
 
     // Check if command author has permissions
     if (!message.member?.hasPermission(['BAN_MEMBERS'])) {
-        message.reply('You do not have permissions for this command.');
+        message.reply('You do not have permissions for this command.').then(res => {
+            message.delete({timeout: 5000});
+            res.delete({timeout: 5000});
+        });
         return;
     }
     
