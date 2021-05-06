@@ -1,14 +1,17 @@
-// Projects imports
+// Project imports
 import { Execute } from '../interfaces/Command';
 
-// Command properties
+// Properties
 const name: string = 'ping';
 const description: string = 'Pong!';
 
-// Command execute function
+// Execute function
 const execute: Execute = async (bot, message, args) => {
-    const msg = await message.channel.send(":ping_pong: Pinging...");
-    msg.edit(`:ping_pong: Pong!\nLatency: ${Math.floor(msg.createdAt.getTime() - message.createdAt.getTime())}ms`);
+    message.channel.send(":ping_pong: Pinging...").then(res => {
+        res.edit(`:ping_pong: Pong!\nLatency: ${res.createdTimestamp - message.createdTimestamp}ms`);
+        message.delete({ timeout: 5000 });
+        res.delete({ timeout: 5000 });
+    });
     return;
 }
 

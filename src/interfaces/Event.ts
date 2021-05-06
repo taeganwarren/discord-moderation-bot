@@ -1,4 +1,4 @@
-// Projects imports
+// Project imports
 import { Bot } from '../classes/bot';
 
 // Execute functions interface

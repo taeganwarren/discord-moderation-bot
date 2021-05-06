@@ -1,9 +1,9 @@
 // Library imports
 import { Message } from 'discord.js';
-// Projects imports
+// Project imports
 import { Bot } from '../classes/bot';
 
-// Execute functions interface
+// Execute function interface
 export interface Execute {
     (bot: Bot, message: Message, args: string[]): Promise<void>
 }
