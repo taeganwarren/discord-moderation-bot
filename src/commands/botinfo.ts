@@ -50,7 +50,6 @@ const execute: Execute = async (prefix, bot, message, args) => {
         .addField('User information:', stripIndents`
         **\\> Username:** ${member?.user.username}
         **\\> Tag:** ${member?.user.tag}
-        **\\> ID:** ${member?.user.id}
         **\\> Created:** ${created}`, true)
         .addField('Server Specific Information:', stripIndents`
         **\\> Display name:** ${member?.displayName}
