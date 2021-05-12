@@ -12,27 +12,25 @@ export default {
     cooldown: 0,
 
     // Execute function
-    // TODO: Allow command to be ran silently
-    // TODO: Allow user to pass in a channel ID
     execute: async (prefix, bot, message, args) => {
         
         // Check if command author has permissions
         if (!message.member?.hasPermission(['MANAGE_MESSAGES'])) {
             message.reply('You do not have permissions for this command.').then(res => {
-                message.delete({timeout: 5000});
-                res.delete({timeout: 5000});
+                message.delete({timeout: 3000});
+                res.delete({timeout: 3000});
             });
             return;
         }
 
-        // Check is channel is a text channel
+        // Check if channel is a text channel
         if (message.channel.type === 'text') {
             const amount = Number(args[0]);
 
             // Check if amount is a number
             if (amount === NaN) {
                 message.reply('Argument supplied is not a valid number.').then(res => {
-                    res.delete({timeout: 5000});
+                    res.delete({timeout: 3000});
                 });
 
             // Delete messages
@@ -41,11 +39,11 @@ export default {
                     const difference = amount-messages.size;
                     if (difference > 0) {
                         message.reply(`Deleted ${messages.size} messages. ${difference} messages older than two weeks were not deleted. This message will be deleted in five seconds.`).then(res => {
-                            res.delete({timeout: 5000});
+                            res.delete({timeout: 3000});
                         });
                     } else {
                         message.reply(`Deleted ${messages.size} messages. This message will be deleted in five seconds.`).then(res => {
-                            res.delete({timeout: 5000});
+                            res.delete({timeout: 3000});
                         });
                     }
                 });
@@ -54,7 +52,7 @@ export default {
         // Let user know if messages can not be deleted in this channel
         } else {
             message.reply('Can not delete messgaes in this channel.').then(res => {
-                res.delete({timeout: 5000});
+                res.delete({timeout: 3000});
             });
         }
     }

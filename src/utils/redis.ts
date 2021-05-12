@@ -9,10 +9,12 @@ const redis_client: RedisClient = redis.createClient({
     port: Number(process.env.REDIS_PORT)
 });
 
+// Error event
 redis_client.on('error', (error) => {
     logger.error({message: error});
 });
 
+// Ready event
 redis_client.on('ready', () => {
     logger.info({message: 'Connected to redis server'});
 })

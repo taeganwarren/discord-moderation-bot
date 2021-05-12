@@ -1,7 +1,10 @@
+// Library imports
 import winston from 'winston';
 
+// Define logger
 export const logger = winston.createLogger({
 	levels: winston.config.syslog.levels,
+	// Log everything to combined.log and only errors to error.log
 	transports: [
 		new winston.transports.File({
 			filename: 'logs/combined.log',
@@ -12,9 +15,10 @@ export const logger = winston.createLogger({
 			level: 'error'
 		})
 	],
-	format: winston.format.printf(log => `[${log.level.toUpperCase()}] ${log.message}`)
+	format: winston.format.simple()
 });
 
+// If running in development, add a console logger
 if (process.env.NODE_ENV === 'development') {
 	logger.add(new winston.transports.Console({
 		format: winston.format.combine(winston.format.colorize(),winston.format.simple())

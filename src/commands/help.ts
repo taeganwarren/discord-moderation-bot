@@ -1,5 +1,5 @@
 // Project imports
-import { Command, Execute } from '../types/interfaces/command';
+import { Command } from '../types/interfaces/command';
 
 // Command definition
 export default {

@@ -17,8 +17,8 @@ export default {
         // Check if command author has permissions
         if (!message.member?.hasPermission(['MANAGE_GUILD'])) {
             message.reply('You do not have permissions for this command.').then(res => {
-                res.delete({timeout: 5000});
-                message.delete({timeout: 5000});
+                res.delete({timeout: 3000});
+                message.delete({timeout: 3000});
             });
             return;
         }
