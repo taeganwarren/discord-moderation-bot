@@ -1,0 +1,217 @@
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: ban.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: grant.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: pog.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Registering event: message.ts
+[INFO] Registering event: ready.ts
+[ERROR] Error: Redis connection to localhost:5000 failed - connect ECONNREFUSED 127.0.0.1:5000
+[ERROR] Error: Redis connection to localhost:5000 failed - connect ECONNREFUSED 127.0.0.1:5000
+[ERROR] Error: Redis connection to localhost:5000 failed - connect ECONNREFUSED 127.0.0.1:5000
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[ERROR] Error: Redis connection to localhost:5000 failed - connect ECONNREFUSED 127.0.0.1:5000
+[ERROR] Error: Redis connection to localhost:5000 failed - connect ECONNREFUSED 127.0.0.1:5000
+[ERROR] Error: Redis connection to localhost:5000 failed - connect ECONNREFUSED 127.0.0.1:5000
+[ERROR] Error: Redis connection to localhost:5000 failed - connect ECONNREFUSED 127.0.0.1:5000
+[INFO] Loading command: ban.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: ban.ts
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: grant.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: grant.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: pog.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: pog.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Registering event: message.ts
+[INFO] Registering event: ready.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: ban.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: ban.ts
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: grant.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: grant.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: pog.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: pog.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Registering event: message.ts
+[INFO] Registering event: ready.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: ban.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: ban.ts
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: grant.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: grant.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: pog.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: pog.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Registering event: message.ts
+[INFO] Registering event: ready.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: ban.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: ban.ts
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: grant.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: grant.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: pog.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: pog.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Registering event: message.ts
+[INFO] Registering event: ready.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: ban.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: ban.ts
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: grant.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: grant.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: pog.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: pog.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Registering event: message.ts
+[INFO] Registering event: ready.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: ban.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: ban.ts
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: grant.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: grant.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: pog.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: pog.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Registering event: message.ts
+[INFO] Registering event: ready.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"
+[INFO] Loading command: ban.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: ban.ts
+[INFO] Loading command: botinfo.ts
+[INFO] Loading command: grant.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: grant.ts
+[INFO] Loading command: help.ts
+[INFO] Loading command: ping.ts
+[INFO] Loading command: pog.ts
+[ERROR] TypeError: Cannot read property 'name' of undefined
+[ERROR] Error loading command: pog.ts
+[INFO] Loading command: prefix.ts
+[INFO] Loading command: purge.ts
+[INFO] Registering event: message.ts
+[INFO] Registering event: ready.ts
+[INFO] Connected to redis server
+[INFO] devbot has logged in
+[INFO] devbot has finished setup
+[INFO] Activity set to "2 servers | @me!"

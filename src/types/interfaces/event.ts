@@ -1,5 +1,5 @@
 // Project imports
-import { Bot } from '../classes/bot';
+import { Bot } from '../../classes/bot';
 
 // Execute function interface
 export interface Execute {

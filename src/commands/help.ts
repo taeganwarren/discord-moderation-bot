@@ -1,14 +1,19 @@
 // Project imports
-import { Execute } from '../interfaces/Command';
+import { Command, Execute } from '../types/interfaces/command';
 
-// Properties
-const name: string = 'help';
-const description: string = 'Shows help text';
-const usage: string = '';
+// Command definition
+export default {
 
-// Execute function
-const execute: Execute = async (bot, message, args) => {
-    
-}
+    // Properties
+    name: 'help',
+    description: 'Shows help text',
+    usage: '',
+    aliases: [],
+    cooldown: 0,
 
-export { name, description, usage, execute }
+    // Execute function
+    execute: async (prefix, bot, message, args) => {
+
+    }
+
+} as Command;

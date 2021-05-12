@@ -1,36 +1,42 @@
 // Project imports
-import { Execute } from '../interfaces/Command';
+import { Command } from '../types/interfaces/command';
 
-// Properties
-const name: string = 'prefix';
-const description: string = 'Sets a custom prefix for the bot in the current server.';
-const usage: string = '';
+// Command definition
+export default {
 
-// Execute function
-const execute: Execute = async (prefix, bot, message, args) => {
+    // Properties
+    name: 'prefix',
+    description: 'Sets a custom prefix for the bot in the current server.',
+    usage: '',
+    aliases: [],
+    cooldown: 0,
 
-    // Check if command author has permissions
-    if (!message.member?.hasPermission(['MANAGE_GUILD'])) {
-        message.reply('You do not have permissions for this command.').then(res => {
-            res.delete({timeout: 5000});
-            message.delete({timeout: 5000});
-        });
-        return;
-    }
+    // Execute function
+    execute: async (bot, prefix, message, args) => {
 
-    // Check usage and set the prefix in the redis store
-    // TODO: Check for valid prefix
-    // TODO: Update prefix in mongodb
-    if (args[0]) {
-        if (message.guild) {
-            bot.prefixes.set(message.guild.id, args[0], async (err, res) => {
-
+        // Check if command author has permissions
+        if (!message.member?.hasPermission(['MANAGE_GUILD'])) {
+            message.reply('You do not have permissions for this command.').then(res => {
+                res.delete({timeout: 5000});
+                message.delete({timeout: 5000});
             });
+            return;
         }
-    } else {
-        message.reply('Usage: !prefix <prefix>');
-        return;
+    
+        // Check usage and set the prefix in the redis store
+        // TODO: Check for valid prefix
+        // TODO: Update prefix in mongodb
+        // TODO: Fix usage
+        if (args[0]) {
+            if (message.guild) {
+                bot.prefixes.set(message.guild.id, args[0], async (err, res) => {
+    
+                });
+            }
+        } else {
+            message.reply('Usage: !prefix <prefix>');
+            return;
+        }
     }
-}
 
-export { name, description, usage, execute }
+} as Command;

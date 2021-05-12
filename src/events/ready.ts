@@ -1,21 +1,23 @@
 // Project imports
-import { Execute } from '../interfaces/Event';
+import { Event } from '../types/interfaces/event';
 
-// Properties
-const name: string = 'ready';
-const once: boolean = true;
+// Event definition
+export default {
 
-// Execute function
-const execute: Execute = async (bot) => {
-    console.log(`${bot.user?.username} has logged in`);
+    // Properties
+    name: 'ready',
+    once: true,
 
-    // Set bot activity
-    const num_servers = bot.guilds.cache.size;
-    bot.user?.setActivity(`${num_servers} servers | @me!`, { type: 'WATCHING' })
-        .then(presence => console.log(`Activity set to "${presence.activities[0].name}"`))
-        .catch(console.error);
+    // Execute function
+    execute: async (bot) => {
+        bot.logger.info({message: `${bot.user?.username} has logged in`});
 
-    console.log(`${bot.user?.username} has finished setup`);
-}
+        // Set bot activity
+        const num_servers = bot.guilds.cache.size;
+        bot.user?.setActivity(`${num_servers} servers | @me!`, { type: 'WATCHING' })
+            .then(presence => bot.logger.info({message: `Activity set to "${presence.activities[0].name}"`}));
 
-export { name, once, execute }
+        bot.logger.info({message: `${bot.user?.username} has finished setup`});
+    }
+
+} as Event;
