@@ -40,11 +40,11 @@ export default {
                 message.channel.bulkDelete(amount, true).then(messages => {
                     const difference = amount-messages.size;
                     if (difference > 0) {
-                        message.reply(`Deleted ${messages.size} messages. ${difference} messages older than two weeks were not deleted. This message will be deleted in five seconds.`).then(res => {
+                        message.reply(`Deleted ${messages.size} messages. ${difference} messages older than two weeks were not deleted. This message will be deleted in three seconds.`).then(res => {
                             res.delete({timeout: 3000});
                         });
                     } else {
-                        message.reply(`Deleted ${messages.size} messages. This message will be deleted in five seconds.`).then(res => {
+                        message.reply(`Deleted ${messages.size} messages. This message will be deleted in three seconds.`).then(res => {
                             res.delete({timeout: 3000});
                         });
                     }

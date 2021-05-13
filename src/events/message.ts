@@ -5,6 +5,8 @@ import { Event } from '../types/interfaces/event';
 import config from '../botconfig.json';
 
 // Event definition
+// TODO: Add command cooldowns
+// TODO: Add command aliases
 export default {
 
     // Properties

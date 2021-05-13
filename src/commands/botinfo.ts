@@ -5,6 +5,7 @@ import { stripIndents } from 'common-tags';
 import { get_member, format_date } from '../utils/functions';
 import config from '../botconfig.json';
 import { Command } from '../types/interfaces/command';
+import { logger } from '../utils/logger';
 
 // Command definition
 export default {
@@ -19,8 +20,6 @@ export default {
     cooldown: 0,
 
     // Execute function
-    // TODO: Fix hardcoded color value
-    // TODO: Maybe allow to run in DM's
     execute: async (bot, prefix, message, args) => {
 
         // Format developers string
@@ -34,8 +33,7 @@ export default {
         });
 
         // Create bot embed
-        const bot_info_embed = new MessageEmbed()
-            .setColor([56, 112, 184]);
+        const bot_info_embed = new MessageEmbed();
         
         // Get bot information
         const member = get_member(message, config.id, false);
@@ -63,6 +61,7 @@ export default {
                     **\\> Tag:** ${member.user.tag}
                     **\\> Created:** ${created}`, true)
             } else {
+                bot.logger.error({message: `Error getting bot details in server ${message.guild.name}:\n${member}\n${user}`});
                 return;
             }
         } else {
@@ -74,6 +73,7 @@ export default {
                     **\\> Username:** ${user.username}
                     **\\> Created:** ${created}`, true)
             } else {
+                bot.logger.error({message: `Error getting bot details in DM's:\n${user}`});
                 return;
             }
         }

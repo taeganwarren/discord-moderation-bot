@@ -8,12 +8,14 @@ import { redis_client } from '../utils/redis';
 import { logger } from '../utils/logger';
 
 // Bot class
+// TODO: Add package to dynamically get color and add color to embeds
 export class Bot extends Client {
 
     // Properties
     public commands: Collection<string, Command> = new Collection();
     public prefixes = redis_client;
     public logger = logger;
+    // TODO: Add database
 
     // Constructor
     public constructor() {
@@ -22,6 +24,7 @@ export class Bot extends Client {
         });
         this.load_commands();
         this.register_events();
+        // TODO: Load and cache all prefixes from database
 
         // Starts the bot
         this.login(process.env.TOKEN);
