@@ -6,13 +6,15 @@ export default {
 
     // Properties
     name: 'purge',
-    description: '',
+    description: 'Deletes X amount of messgaes that are younger than two weeks.',
     usage: '',
+    permissions: ['MANAGE_MESSAGES', 'ADD_REACTIONS'],
+    dm: false,
     aliases: [],
     cooldown: 0,
 
     // Execute function
-    execute: async (prefix, bot, message, args) => {
+    execute: async (bot, prefix, message, args) => {
         
         // Check if command author has permissions
         if (!message.member?.hasPermission(['MANAGE_MESSAGES'])) {

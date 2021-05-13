@@ -1,6 +1,7 @@
 node_modules/
 dist/
 misc/
+logs/
 
 .env
 redis.conf

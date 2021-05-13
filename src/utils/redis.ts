@@ -17,6 +17,11 @@ redis_client.on('error', (error) => {
 // Ready event
 redis_client.on('ready', () => {
     logger.info({message: 'Connected to redis server'});
-})
+});
+
+// Warning event
+redis_client.on('warning', (warning) => {
+    logger.warn({message: warning});
+});
 
 export { redis_client }

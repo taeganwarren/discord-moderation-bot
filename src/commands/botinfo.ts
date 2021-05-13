@@ -13,13 +13,16 @@ export default {
     name: 'botinfo',
     description: 'Information about the bot.',
     usage: '',
+    permissions: [],
+    dm: false,
     aliases: [],
     cooldown: 0,
 
     // Execute function
     // TODO: Better logic for date and other possibly null/undefined variables
     // TODO: Fix hardcoded color value
-    execute: async (prefix, bot, message, args) => {
+    // TODO: Maybe allow to run in DM's
+    execute: async (bot, prefix, message, args) => {
 
         // Return if the guild is not available
         if (!message.guild?.available) { return; }
