@@ -14,27 +14,14 @@ export default {
     description: 'Information about the bot.',
     usage: '',
     permissions: [],
-    dm: false,
+    dm: true,
     aliases: [],
     cooldown: 0,
 
     // Execute function
-    // TODO: Better logic for date and other possibly null/undefined variables
     // TODO: Fix hardcoded color value
     // TODO: Maybe allow to run in DM's
     execute: async (bot, prefix, message, args) => {
-
-        // Return if the guild is not available
-        if (!message.guild?.available) { return; }
-
-        // Get the information related to the bot in the specific server
-        const member = get_member(message, config.id, false);
-        if (!member) { return; }
-
-        // Get the roles assigned to the bot
-        const roles = member.roles.cache
-            .filter(r => r.id !== message.guild?.id)
-            .map(r => r).join(", ") || 'none';
 
         // Format developers string
         let developers = '';
@@ -46,31 +33,63 @@ export default {
             }
         });
 
-        // Get date information
-        if (!member.joinedAt) { return; }
-        const joined = format_date(member.joinedAt);
-        const created = format_date(member.user.createdAt);
-
         // Create bot embed
         const bot_info_embed = new MessageEmbed()
-            .setThumbnail(member.user.displayAvatarURL())
-            .setColor([56, 112, 184])
-            .addField('User information:', stripIndents`
-            **\\> Username:** ${member?.user.username}
-            **\\> Tag:** ${member?.user.tag}
-            **\\> Created:** ${created}`, true)
-            .addField('Server Specific Information:', stripIndents`
-            **\\> Display name:** ${member?.displayName}
-            **\\> Joined:** ${joined}
-            **\\> Roles:** ${roles}`, true)
-            .addField('Project Information', stripIndents`
+            .setColor([56, 112, 184]);
+        
+        // Get bot information
+        const member = get_member(message, config.id, false);
+        const user = bot.user;
+
+        // Get the server specific information if in a guild
+        if (message.guild) {
+            if (member && user) {
+                // Get roles
+                const roles = member?.roles.cache
+                    .filter(r => r.id !== message.guild?.id)
+                    .map(r => r).join(", ") || 'none';
+                // Get date information
+                if (!member?.joinedAt) { return; }
+                const joined = format_date(member.joinedAt);
+                const created = format_date(member.user.createdAt);
+                // Server specific information
+                bot_info_embed.addField('Server Specific Information:', stripIndents`
+                    **\\> Display name:** ${member.displayName}
+                    **\\> Joined:** ${joined}
+                    **\\> Roles:** ${roles}`, true);
+                // User information
+                bot_info_embed.addField('User information:', stripIndents`
+                    **\\> Username:** ${member.user.username}
+                    **\\> Tag:** ${member.user.tag}
+                    **\\> Created:** ${created}`, true)
+            } else {
+                return;
+            }
+        } else {
+            if (user) {
+                // Get date information
+                const created = format_date(user.createdAt);
+                // User information
+                bot_info_embed.addField('User information:', stripIndents`
+                    **\\> Username:** ${user.username}
+                    **\\> Created:** ${created}`, true)
+            } else {
+                return;
+            }
+        }
+
+        // Set thumbnail
+        bot_info_embed.setThumbnail(user.displayAvatarURL());
+
+        // Project Information
+        bot_info_embed.addField('Project Information', stripIndents`
             **\\> Project name:** ${config.name}
             **\\> Description:** ${config.description}
             **\\> Version:** ${config.version}
             **\\> Developers:** ${developers}`);
-            
+
         // Send embed
-        message.channel.send(bot_info_embed);
+        message.channel.send(bot_info_embed);   
     }
 
 } as Command;

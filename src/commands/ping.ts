@@ -1,5 +1,6 @@
 // Project imports
 import { Command } from '../types/interfaces/command';
+import { prefix } from '../botconfig.json';
 
 // Command definition
 export default {
@@ -7,7 +8,7 @@ export default {
     // Properties
     name: 'ping',
     description: 'Pong!',
-    usage: '',
+    usage: `${prefix}ping`,
     permissions: [],
     dm: true,
     aliases: [],

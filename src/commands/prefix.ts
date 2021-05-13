@@ -27,6 +27,7 @@ export default {
         }
     
         // Check usage and set the prefix in the redis store
+        // TODO: Save prefix to database
         if (args[0]) {
             if (message.guild) {
                 bot.prefixes.set(message.guild.id, args[0], async (err, res) => {

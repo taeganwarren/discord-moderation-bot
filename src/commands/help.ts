@@ -1,5 +1,5 @@
 // Library imports
-import { MessageEmbed, TeamMember } from 'discord.js';
+import { MessageEmbed } from 'discord.js';
 import { stripIndents } from 'common-tags';
 // Project imports
 import { Command } from '../types/interfaces/command';
